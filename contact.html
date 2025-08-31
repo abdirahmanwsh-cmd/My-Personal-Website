@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contact | Abdirahman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="contact">
+  <!-- Navbar -->
+  <header class="header">
+    <nav class="nav" aria-label="Main">
+      <div class="brand">Abdirahman</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Project</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact form -->
+  <main class="contact-wrap">
+    <h1 class="contact-header">Contact Me</h1>
+
+    <form id="contact-form" action="#" method="post" novalidate>
+      <label for="name">Your Name</label>
+      <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="jane@example.com" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+
+      <button type="submit">Send Message</button>
+      <p id="form-status" class="form-status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> Abdirahman</footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple client-side check so you get feedback without a backend
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // remove this if you later add a real backend
+      if (!form.checkValidity()) {
+        statusEl.textContent = "Please fill out all fields correctly.";
+        return;
+      }
+      // Simulate success
+      statusEl.textContent = "Thanks! Your message was recorded locally (demo).";
+      form.reset();
+    });
+  </script>
+</body>
+</html>

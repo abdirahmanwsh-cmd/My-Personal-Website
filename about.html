@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About | Abdirahman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="about">
+  <!-- Navbar -->
+  <header class="header">
+    <nav class="nav">
+      <div class="brand">Abdirahman</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Project</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About hero with background -->
+  <main>
+    <section class="hero" aria-label="About section">
+      <div class="inner card">
+        <h1>About Me</h1>
+        <p class="lead">
+            hI, I'm Abdirahman.
+            Currently, I'm a student at Moringa school, sharpening my skills in software engineering.
+            I'm passionate about technology and eager to contribute to innovative projects.
+            In my free time, I enjoy reading tech blogs, exploring new programming languages, and working on personal coding projects.
+            I'm excited to connect with like-minded individuals and explore opportunities in the tech industry.
+        </p>
+        <hr style="border: none; height:1px; background: rgba(255,255,255,0.3); margin:16px 0;">
+        <h2 style="font-size:1.25rem;">My Story</h2>
+        <p>
+            My journey into tech started with a curiosity about how websites and apps are built.
+            This curiosity led me to pursue a career in software engineering, where I could combine my love for problem-solving with creativity.
+            Through my studies at Moringa school, I've gained hands-on experience in various programming languages and frameworks.
+            I'm particularly interested in web development and aspire to create user-friendly digital experiences.
+            As I continue to learn and grow in this field, I'm excited about the possibilities that lie ahead and the impact I can make through technology.
+            Outside of class, i enjoy experimenting with new coding projects, collaborating with peers, and staying updated on the latest tech trends.
+            I'm looking forward to the opportunities and challenges that come with a career in software engineering.
+            My goal is to contribute to innovative projects that make a difference in people's lives.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> Abdirahman</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

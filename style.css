@@ -1,0 +1,187 @@
+/* ===== Reset and basics ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: system-ui, Arial, sans-serif;
+  line-height: 1.5;
+  color: #f5f5f5;
+  background: #0f1115; /* fallback color */
+}
+
+/* ===== Navbar ===== */
+.header {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(15,17,21,0.8);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav {
+  max-width: 1100px; margin: 0 auto; padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.brand { font-weight: 700; letter-spacing: 0.3px; }
+.nav ul { list-style: none; display: flex; gap: 18px; }
+.nav a {
+  text-decoration: none; color: #eaeaea;
+  padding: 6px 10px; border-radius: 8px;
+}
+.nav a:hover { background: rgba(255,255,255,0.08); }
+.nav a.active { background: rgba(255,255,255,0.14); }
+
+/* ===== Hero section (full screen background) ===== */
+.hero {
+  min-height: 100vh; /* full height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: grid; place-items: center; /* center text */
+  text-align: center;
+}
+
+/* Background image specifically for Home */
+body.home .hero {
+  background-image: url('https://img.freepik.com/premium-vector/abstract-computer-technology-background-with-circuit-board-hexagon-techvector-illustration_474511-332.jpg?semt=ais_hybrid&w=740&q=80'); 
+}
+
+/* Background image specifically for About */
+body.about .hero {
+  background-image: url('https://www.eschoolnews.com/files/2024/12/k-12-tech-innovation-news.jpeg');
+}
+
+/* Background image specifically for Projects */
+body.projects .hero {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjrmSyHMG8IH2QLZVYmTvDWNvJd_gaVpTSlA&s=10');
+}
+
+
+/* Dark overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+.hero > .inner {
+  position: relative; max-width: 900px; padding: 24px;
+}
+
+/* Text and button */
+.kicker { text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; font-size: 0.9rem; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); margin-top: 6px; }
+.lead { opacity: 0.95; margin: 10px auto 18px; max-width: 60ch; }
+
+.btn {
+  display: inline-block; padding: 12px 18px;
+  border-radius: 10px; background: #ffffff; color: #111;
+  text-decoration: none; font-weight: 600;
+}
+.btn:hover { filter: brightness(0.92); }
+
+/* ===== Contact page ===== */
+.contact-header {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.contact-wrap {
+  max-width: 760px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+form {
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin: 14px 0 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  margin-top: 16px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #ffffff;
+  color: #111;
+  font-weight: 700;
+}
+
+button[type="submit"]:hover {
+  filter: brightness(0.92);
+}
+
+.form-status {
+  margin-top: 12px;
+  opacity: 0.9;
+}
+
+/* Hide toggle button on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  #nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
+
+  #nav-links li {
+    margin: 8px 0;
+  }
+}
+
+/* Profile picture */
+.profile {
+  width: 140px; height: 140px; border-radius: 50%;
+  object-fit: cover; object-position: center;
+  border: 3px solid rgba(255,255,255,0.85);
+  margin: 14px 0 8px;
+}
+
+/* Footer */
+.footer {
+  text-align: center; padding: 30px 16px; opacity: 0.8;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
